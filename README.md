@@ -8,4 +8,4 @@ what does this tool log:
 * friend list (works only if that person didnt private it or set it to friends only)
 * account description
 * level (int)
-* etc
+and more ...
