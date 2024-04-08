@@ -5,7 +5,7 @@ A Steam user tracker created in python
 
 what does this tool log:
 * username
-* friend list (works only if its accessable)
+* friend list (works only if its accessible)
 * account description
 * level (int)
 and more ...
