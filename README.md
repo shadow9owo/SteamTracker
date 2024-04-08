@@ -9,3 +9,5 @@ what does this tool log:
 * account description
 * level (int)
 and more ...
+
+made for python 3.9.8
