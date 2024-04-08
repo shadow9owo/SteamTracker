@@ -12,7 +12,7 @@ import platform
 import subprocess
 import random
 
-version = "1.0"
+version = "1.1.1"
 
 print("checking for updates")
 os.system("pip install bs4 datetime ctypes json requests tkinter subprocess platform random")
@@ -153,8 +153,12 @@ if os.path.isfile(os.getcwd() + "/logs.txt") != True:
 
 with open(os.getcwd() + "/config.json", "r") as f:
     config_data = json.loads(f.readline().strip())
-    url = config_data["link"]
-    hidewindow = config_data["hidewindow"]
+    try:
+        url = config_data["link"]
+        hidewindow = config_data["hidewindow"]
+    except:
+        print(f"your config.json is most likely corrupted please delete your config.json\nand run {__file__} again")
+        exit(1)
     try:
         if "y" in hidewindow.lower().strip():
             if os.name == 'nt':
