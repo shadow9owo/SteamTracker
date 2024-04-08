@@ -10,4 +10,4 @@ what does this tool log:
 * level (int)
 and more ...
 
-made for python 3.9.8 || contact : shadowdevreal@protonmail.com
+made for python 3.9.8
