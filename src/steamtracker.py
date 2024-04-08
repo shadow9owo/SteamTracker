@@ -158,6 +158,7 @@ with open(os.getcwd() + "/config.json", "r") as f:
         hidewindow = config_data["hidewindow"]
     except:
         print(f"your config.json is most likely corrupted please delete your config.json\nand run {__file__} again")
+        input()
         exit(1)
     try:
         if "y" in hidewindow.lower().strip():
