@@ -1,22 +1,21 @@
 import requests
-from bs4 import BeautifulSoup
 import time
 import os
-import ctypes
-import json
-import winreg
-import tkinter as tk
-import tkinter.messagebox as messagebox
-from datetime import datetime
 import platform 
 import subprocess
 import random
 
-version = "1.1.1"
+version = "1.1.2"
 
 print("checking for updates")
 os.system("pip install bs4 datetime ctypes json requests tkinter subprocess platform random")
 
+from bs4 import BeautifulSoup
+import tkinter as tk
+import tkinter.messagebox as messagebox
+import ctypes
+import json
+import winreg
 
 def ping(host): #icmp echo ping shit
     param = '-n' if platform.system().lower() == 'windows' else '-c'
@@ -227,7 +226,9 @@ while True:
     
                 steamids_str = '-'.join(steamids)
                 
-                f.write("\n" + json.dumps({"time": datetime.now().isoformat(),
+                with open(os.getcwd() + "/logs.txt", "a") as f:
+
+                 f.write("\n" + json.dumps({"time": int(time.time()),
                                            "game_being_played": "none",
                                            "status": status,
                                            "profile_description": profile_description,
@@ -254,7 +255,7 @@ while True:
     
                  steamids_str = '-'.join(steamids)
                  
-                 f.write("\n" + json.dumps({"time": datetime.now().isoformat(),
+                 f.write("\n" + json.dumps({"time": int(time.time() ),
                                             "game_being_played": "none",
                                             "status": status,
                                             "profile_description": profile_description,
